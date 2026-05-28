@@ -147,6 +147,17 @@ pytest
 
 Expected output: **30 passed**.
 
+### Smoke-testing a deployment
+
+To verify a live deployment end-to-end (register → login → enroll → deregister → delete), run:
+
+```bash
+python scripts/smoke_test.py https://capstone-project-do33.onrender.com \
+    --admin-email you@example.com --admin-password your-admin-password
+```
+
+The script creates a fresh student each run (unique email per invocation) and cleans up the course it creates.
+
 ## Test Coverage
 
 - **Auth** — register, duplicate-email, login, wrong password, `/me` requires auth, `/me` returns user, `/auth/register` cannot grant admin role
@@ -176,7 +187,11 @@ Capstone_project/
 
 ## Deployment
 
-The app is deployed at: `<your-render-url-here>`
+The app is deployed at: https://capstone-project-do33.onrender.com
+
+Interactive docs: https://capstone-project-do33.onrender.com/docs
+
+Hosted on **Render** (web service) with **Neon** (PostgreSQL). The free Render tier sleeps after inactivity, so the first request after a quiet period may take ~30 seconds to wake.
 
 ## Author
 
