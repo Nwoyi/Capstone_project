@@ -1,0 +1,29 @@
+# Virtual environment - never commit this, it's huge and machine-specific
+venv/
+env/
+.venv/
+
+# Python cache files - auto-generated, useless to others
+__pycache__/
+*.pyc
+*.pyo
+
+# Secrets - NEVER commit these
+.env
+.env.local
+
+# Local SQLite database - everyone makes their own
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE / editor junk
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Test coverage reports
+.pytest_cache/
+.coverage
+htmlcov/
