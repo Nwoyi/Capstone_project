@@ -149,9 +149,9 @@ Expected output: **30 passed**.
 
 ## Test Coverage
 
-- **Auth** — register, duplicate-email, login, wrong password, `/me` requires auth, `/me` returns user
-- **Courses** — public listing, admin-only writes, duplicate-code rejection, capacity validation, partial updates, activate/deactivate visibility
-- **Enrollments** — student enroll, admin-cannot-enroll, double-enrollment blocked, inactive-course blocked, capacity enforced, list mine, deregister own, admin list all, admin remove any
+- **Auth** — register, duplicate-email, login, wrong password, `/me` requires auth, `/me` returns user, `/auth/register` cannot grant admin role
+- **Courses** — public listing, get-by-id (success + 404), admin-only writes, duplicate-code rejection, capacity validation, partial updates, activate/deactivate visibility, delete (admin-only, blocked when enrollments exist)
+- **Enrollments** — student enroll, admin-cannot-enroll, double-enrollment blocked, inactive-course blocked, capacity enforced, list mine, deregister own, admin list all, admin list by course, admin remove any
 
 ## Project Structure
 

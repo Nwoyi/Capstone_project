@@ -3,12 +3,15 @@ import sys
 from logging.config import fileConfig
 from pathlib import Path
 
+from dotenv import load_dotenv
 from sqlalchemy import engine_from_config, pool
 
 from alembic import context
 
 # Make the project root importable so we can `from app...`
 sys.path.append(str(Path(__file__).resolve().parents[1]))
+
+load_dotenv()
 
 from app.database import Base  # noqa: E402
 from app import models  # noqa: E402, F401  (registers models with Base.metadata)
